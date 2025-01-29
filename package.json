@@ -1,3 +1,16 @@
 {
-  "name" : "wetube"
+  "name": "wetube",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/box3101/wetube.git)"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "author": "box3101",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
