@@ -1,7 +1,12 @@
-const handleHome = (req, res) => res.send("Home");
-const handleJoin = (req, res) => res.send("Join");
-const handleWatch = (req, res) => res.send("Watch");
-const handleEdit = (req, res) => res.send("Edit");
-const handleDelete = (req, res) => res.send("Delete");
+const handleTrending = (req, res) => res.send("Trending");
 
-export { handleHome, handleJoin, handleWatch, handleEdit, handleDelete };
+const handleSeeVideo = (req, res) => {
+  console.log(req.params);
+  res.send("See Video");
+}
+const handleSearch = (req, res) => res.send("Search");
+const handleEditVideo = (req, res) => res.send("Edit Video");
+const handleDeleteVideo = (req, res) => res.send("Delete Video");
+const handleUploadVideo = (req, res) => res.send("Upload Video");
+
+export { handleTrending, handleSeeVideo, handleSearch, handleEditVideo, handleDeleteVideo, handleUploadVideo };
