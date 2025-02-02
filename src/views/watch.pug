@@ -2,9 +2,9 @@ extends base.pug
 include mixins/video
 
 block content
-   h2 welcome to watch!
-
-
+   h1=video.title
+   h2 #{video.views} #{video.views === 1 ? "view" : "views"}
+   a(href=`${video.id}/edit`) Edit Video &rarr;
 
 
 

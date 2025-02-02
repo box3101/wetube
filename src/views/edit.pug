@@ -1,5 +1,7 @@
 extends base.pug
 
 block content
-   h2 welcome to edit!
-
+   h4 Change Title of video
+   form(action="/svae-changes" , method="POST")
+      input(name="title" placeholder="viedo title", value=video.title required)
+      input(value="Save", type="submit")

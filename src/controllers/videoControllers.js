@@ -4,7 +4,7 @@ const videos =[
     rating: 5,
     comments: 2,
     createdAt: "2 minutes ago",
-    views: 59,
+    views: 1,
     id: 1,
   },
   {
@@ -32,14 +32,20 @@ const handleTrending = (req, res) => {
 const handleSeeVideo = (req, res) => {
   const {id} = req.params;
   const video = videos[id-1];
-  return res.render("watch", { pageTitle: `Watch ${video.title} Video`});
+  return res.render("watch", { pageTitle: `Watch ${video.title} Video`, video });
 }
-const handleSearch = (req, res) => res.send("Search");
+
+const handleGetEditVideo = (req, res) => {
+  const {id} = req.params;
+  const video = videos[id-1];
+  return res.render("edit", { pageTitle: `Edit ${video.title} Video`, video });
+}
+const handlePostEditVideo = (req, res) => {
+  const {id} = req.params;
+  const {title} = req.body;
+  videos[id-1].title = title;
+  return res.redirect(`/videos/${id}`);
+}
 
 
-
-const handleEditVideo = (req, res) => res.render("edit");
-const handleDeleteVideo = (req, res) => res.send("Delete Video");
-const handleUploadVideo = (req, res) => res.send("Upload Video");
-
-export { handleTrending, handleSeeVideo, handleSearch, handleEditVideo, handleDeleteVideo, handleUploadVideo };
+export { handleTrending, handleSeeVideo, handleGetEditVideo, handlePostEditVideo };
