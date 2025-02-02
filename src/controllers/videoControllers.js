@@ -1,4 +1,12 @@
-const handleTrending = (req, res) => res.render("home");
+const fakeUser = {
+  username: "nico",
+  loggedIn: false,
+};
+
+
+const handleTrending = (req, res) => res.render("home" , 
+  {pageTitle: "Home" , fakeUser} 
+);
 const handleSeeVideo = (req, res) => res.render("watch");
 const handleSearch = (req, res) => res.send("Search");
 const handleEditVideo = (req, res) => res.render("edit");
